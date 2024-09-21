@@ -355,6 +355,14 @@
         </div>
     </main>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const video = document.querySelector('.video_1');
+            video.muted = true; // Asegura que esté silenciado
+            video.play();       // Intenta reproducirlo manualmente si no lo hace
+        });
+    </script>
+
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="assets/scripts/main.js"></script>
 </body>
