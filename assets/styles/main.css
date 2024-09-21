@@ -946,6 +946,17 @@ section{
         cursor: pointer;
         transition: 0.25;
     }
+
+    .p_6{
+        font-weight: 500 !important;
+        font-size: 18px;
+    }
+
+    .p_compro{
+        color: #ba73da;
+        font-weight: 500 !important;
+        font-size: 18px;
+    }
 }
 
 @media screen and (min-width: 0px) and (max-width: 449px) {
@@ -992,5 +1003,16 @@ section{
 
     .p_5{
         padding: 0px 5px 5px 5px;
+    }
+
+    .p_6{
+        font-weight: 500 !important;
+        font-size: 18px;
+    }
+
+    .p_compro{
+        color: #ba73da;
+        font-weight: 500 !important;
+        font-size: 18px;
     }
 }
