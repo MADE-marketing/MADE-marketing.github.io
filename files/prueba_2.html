@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Libros Escolares</title>
+    <style>
+        /* Estilos básicos para las tarjetas */
+        .libro {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 10px;
+            width: 200px;
+            margin: 10px;
+            display: inline-block;
+            text-align: center;
+            background-color: #f9f9f9;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .libro img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        .libro h3 {
+            font-size: 16px;
+            margin: 10px 0;
+        }
+        .libro a {
+            text-decoration: none;
+            color: #007BFF;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Libros Escolares</h1>
+    <div id="libros-container"></div>
+
+    <script>
+const apiKey = 'AIzaSyBBzU_mgbNRFdncgerZYr7aMh-ksQNz6lk'; // Pon aquí tu clave API
+const query = 'libros escolares';  // La búsqueda que deseas hacer
+const maxResults = 40;  // Número máximo de resultados a obtener
+const apiUrl = `https://www.googleapis.com/books/v1/volumes?q=${query}&maxResults=${maxResults}&key=${apiKey}`; 
+
+// Función para hacer la solicitud a Google Books API
+fetch(apiUrl)
+    .then(response => response.json())
+    .then(data => {
+        const librosContainer = document.getElementById('libros-container');
+        
+        // Iterar sobre los resultados de los libros
+        data.items.forEach(item => {
+            const libro = item.volumeInfo;
+            const libroHtml = `
+                <div class="libro">
+                    <img src="${libro.imageLinks ? libro.imageLinks.thumbnail : 'https://via.placeholder.com/150'}" alt="${libro.title}">
+                    <h3>${libro.title}</h3>
+                    <p>${libro.authors ? libro.authors.join(', ') : 'Autor desconocido'}</p>
+                    <a href="${libro.previewLink}" target="_blank">Ver libro</a>
+                </div>
+            `;
+            librosContainer.innerHTML += libroHtml; // Añadir cada tarjeta al contenedor
+        });
+    })
+    .catch(error => console.log('Error al obtener los datos:', error));
+
+    </script>
+
+</body>
+</html>
