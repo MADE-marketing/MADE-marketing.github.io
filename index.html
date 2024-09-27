@@ -22,8 +22,36 @@
 </head>
 <body>
     <div class="ancla_descuento">
-        <p class="HeartWarming texto_oferta">¡APROVECHA! SOLO POR HOY UN 30% DE DESCUENTO ANTES QUE TERMINE LA OFERTA: </p>
+        <p class="HeartWarming texto_oferta">¡APROVECHA! SOLO POR HOY UN 30% DE DESCUENTO ANTES QUE TERMINE LA OFERTA: </p> <p id="countdown"></p>
     </div>
+    <script>
+        let totalSeconds = 2 * 60 * 60; // 2 horas en segundos
+
+        function startCountdown() {
+            const countdownElement = document.getElementById('countdown');
+
+            const interval = setInterval(() => {
+                const hours = Math.floor(totalSeconds / 3600);
+                const minutes = Math.floor((totalSeconds % 3600) / 60);
+                const seconds = totalSeconds % 60;
+
+                countdownElement.textContent = 
+                    String(hours).padStart(2, '0') + ":" + 
+                    String(minutes).padStart(2, '0') + ":" + 
+                    String(seconds).padStart(2, '0');
+
+                if (totalSeconds <= 0) {
+                    clearInterval(interval);
+                    totalSeconds = 2 * 60 * 60; // Reinicia el contador
+                    startCountdown(); // Reinicia la cuenta regresiva
+                } else {
+                    totalSeconds--;
+                }
+            }, 1000);
+        }
+
+        startCountdown();
+    </script>
     <header class="ancla">
         <div class="ancla_opciones_2">
             <a href="index.html">
