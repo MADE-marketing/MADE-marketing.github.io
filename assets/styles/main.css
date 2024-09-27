@@ -120,7 +120,7 @@ section{
     top: 0px;
     left: 0%;
     width: calc(100% - 40px);
-    height: 10px;
+    height: 40px;
     padding: 20px 20px;
     background-color: #6f17c2;  
     display: flex;
@@ -132,7 +132,7 @@ section{
 
 .ancla{
     position: fixed;
-    top: 20px;
+    top: 40px;
     left: 0%;
     width: calc(100% - 40px);
     height: auto;
