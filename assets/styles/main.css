@@ -119,6 +119,7 @@ section{
     position: fixed;
     top: 0px;
     left: 0%;
+    background-color: #6f17c2;
     width: calc(100%);
     height: 40px;
     padding: 0px 0px;
@@ -194,7 +195,6 @@ section{
     width: auto;
     margin: 0%;
     padding: 0%;
-    background-color: #ff0000;
 }
 
 .contenedor_universal{
