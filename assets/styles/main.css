@@ -1019,7 +1019,7 @@ section{
 
 
 .palpitar{
-    animation: palpitarboton 4s infinite linear;
+    animation: palpitarboton 4s infinite linear !important;
 }
 
 @keyframes palpitarboton {
