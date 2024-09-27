@@ -1016,3 +1016,18 @@ section{
         font-size: 18px;
     }
 }
+
+
+.palpitar{
+    animation: palpitarboton 4s infinite linear;
+}
+
+@keyframes palpitarboton {
+    0%{
+        transform: scale(0.95);
+    }
+
+    100%{
+        transform: scale(1.25);
+    }
+}
