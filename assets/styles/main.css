@@ -1024,10 +1024,10 @@ section{
 
 @keyframes palpitarboton {
     0%{
-        transform: scale(0.95);
+        transform: scale(0.9);
     }
 
     100%{
-        transform: scale(1.25);
+        transform: scale(1.1);
     }
 }
